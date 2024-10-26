@@ -1,0 +1,150 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+	{
+		title: 'Building Enterprise-Grade Angular Applications',
+		slug: 'building-enterprise-angular-apps',
+		date: '2024-01-15',
+		excerpt: 'Best practices and patterns for building scalable Angular applications in enterprise environments.',
+		tags: ['Angular', 'Enterprise', 'Architecture']
+	},
+	{
+		title: 'The Journey of Creating ngx-stripe',
+		slug: 'creating-ngx-stripe',
+		date: '2024-01-10',
+		excerpt: 'How and why I created ngx-stripe, challenges faced, and lessons learned along the way.',
+		tags: ['Open Source', 'Angular', 'Stripe']
+	},
+	{
+		title: 'Mobile Workforce Solutions: A Technical Deep Dive',
+		slug: 'mobile-workforce-solutions',
+		date: '2024-01-05',
+		excerpt: 'Technical insights into building robust mobile workforce management solutions.',
+		tags: ['Mobile', 'Enterprise', 'Architecture']
+	}
+];
+---
+
+<Layout title="Blog - Ricardo">
+	<div class="blog">
+		<h1>Blog</h1>
+		<div class="post-grid">
+			{posts.map(post => (
+				<article class="post-card">
+					<div class="post-content">
+						<div class="post-header">
+							<time datetime={post.date}>{new Date(post.date).toLocaleDateString('en-US', {
+								year: 'numeric',
+								month: 'long',
+								day: 'numeric'
+							})}</time>
+							<h2><a href={`/blog/${post.slug}`}>{post.title}</a></h2>
+						</div>
+						<p>{post.excerpt}</p>
+						<div class="tags">
+							{post.tags.map(tag => <span class="tag">{tag}</span>)}
+						</div>
+						<a href={`/blog/${post.slug}`} class="read-more">
+							Read More
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<line x1="5" y1="12" x2="19" y2="12"></line>
+								<polyline points="12 5 19 12 12 19"></polyline>
+							</svg>
+						</a>
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.blog {
+		padding-top: 2rem;
+	}
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		background: linear-gradient(to right, var(--accent), var(--accent-light));
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	.post-grid {
+		display: grid;
+		gap: 2rem;
+	}
+	.post-card {
+		background: var(--card-bg);
+		border-radius: 16px;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		transition: all 0.3s ease;
+	}
+	.post-card:hover {
+		transform: translateY(-4px);
+		border-color: rgba(59, 130, 246, 0.4);
+		box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+	}
+	.post-content {
+		padding: 2rem;
+	}
+	.post-header {
+		margin-bottom: 1rem;
+	}
+	time {
+		font-size: 0.875rem;
+		color: var(--text-secondary);
+		margin-bottom: 0.5rem;
+		display: block;
+	}
+	h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	h2 a {
+		color: var(--text-primary);
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+	h2 a:hover {
+		color: var(--accent);
+	}
+	p {
+		color: var(--text-secondary);
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-bottom: 1.5rem;
+	}
+	.tag {
+		background: rgba(59, 130, 246, 0.1);
+		color: var(--accent);
+		padding: 0.25rem 0.75rem;
+		border-radius: 9999px;
+		font-size: 0.875rem;
+		border: 1px solid rgba(59, 130, 246, 0.2);
+	}
+	.read-more {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--accent);
+		text-decoration: none;
+		font-weight: 500;
+		transition: all 0.3s ease;
+	}
+	.read-more:hover {
+		gap: 0.75rem;
+	}
+	@media (max-width: 768px) {
+		.post-content {
+			padding: 1.5rem;
+		}
+	}
+</style>

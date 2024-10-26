@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Ricardo - Software Engineer">
+	<div class="hero">
+		<div class="hero-content">
+			<div class="title-wrapper">
+				<h1>Ricardo Sánchez</h1>
+				<div class="subtitle">Enterprise Solutions Architect & Open Source Creator</div>
+			</div>
+			<p class="description">
+				Senior Software Engineer at <a href="https://www.psi-mobile.com" target="_blank" class="highlight">PSI Mobile</a>, 
+				specializing in enterprise mobility solutions and digital transformation. Creator of 
+				<a href="https://ngx-stripe.dev" target="_blank" class="highlight">ngx-stripe</a>, empowering developers 
+				with seamless payment integrations.
+			</p>
+			<div class="cta-buttons">
+				<a href="/projects" class="button primary">View Projects</a>
+				<a href="https://github.com/richnologies" target="_blank" class="button github">
+					<svg height="24" width="24" viewBox="0 0 16 16" fill="currentColor">
+						<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+					</svg>
+					GitHub
+				</a>
+			</div>
+		</div>
+		<div class="hero-background">
+			<div class="gradient-circle"></div>
+			<div class="grid"></div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.hero {
+		min-height: calc(100vh - 7rem);
+		display: flex;
+		align-items: center;
+		position: relative;
+		overflow: hidden;
+	}
+	.hero-content {
+		max-width: 800px;
+		position: relative;
+		z-index: 2;
+	}
+	.title-wrapper {
+		margin-bottom: 1.5rem;
+	}
+	h1 {
+		font-size: 5rem;
+		font-weight: 700;
+		color: var(--text-primary);
+		line-height: 1;
+		margin-bottom: 1rem;
+		background: linear-gradient(to right, var(--accent), var(--accent-light));
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		filter: drop-shadow(0 0 2em rgba(255, 87, 34, 0.2));
+	}
+	.subtitle {
+		font-size: 1.5rem;
+		color: var(--text-secondary);
+		font-weight: 500;
+	}
+	.description {
+		font-size: 1.25rem;
+		color: var(--text-secondary);
+		margin-bottom: 2rem;
+		line-height: 1.6;
+		max-width: 600px;
+	}
+	.highlight {
+		color: var(--accent);
+		text-decoration: none;
+		position: relative;
+		font-weight: 500;
+	}
+	.highlight::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		bottom: -2px;
+		left: 0;
+		background: var(--accent);
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform 0.3s ease;
+	}
+	.highlight:hover::after {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+	}
+	.button {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.8rem 1.6rem;
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: 500;
+		transition: all 0.3s ease;
+		border: 1px solid transparent;
+	}
+	.button.primary {
+		background: var(--accent);
+		color: white;
+	}
+	.button.primary:hover {
+		background: var(--accent-dark);
+		transform: translateY(-2px);
+	}
+	.button.github {
+		background: var(--card-bg);
+		color: var(--text-primary);
+		border-color: rgba(255, 255, 255, 0.1);
+	}
+	.button.github:hover {
+		background: #333;
+		transform: translateY(-2px);
+	}
+	.hero-background {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		overflow: hidden;
+	}
+	.gradient-circle {
+		position: absolute;
+		top: -50%;
+		right: -20%;
+		width: 80%;
+		height: 150%;
+		background: radial-gradient(circle, rgba(255, 87, 34, 0.1) 0%, rgba(255, 87, 34, 0) 70%);
+		filter: blur(40px);
+		animation: pulse 8s ease-in-out infinite;
+	}
+	.grid {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+						linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+		background-size: 50px 50px;
+		mask-image: radial-gradient(circle at 50% 50%, black 0%, transparent 80%);
+	}
+	@keyframes pulse {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.2); }
+	}
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 3.5rem;
+		}
+		.subtitle {
+			font-size: 1.25rem;
+		}
+		.description {
+			font-size: 1rem;
+		}
+		.cta-buttons {
+			flex-direction: column;
+		}
+		.button {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+</style>

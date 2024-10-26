@@ -2,27 +2,23 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Ricardo - Software Engineer">
+<Layout title="Ricardo - Web Application Developer">
 	<div class="hero">
 		<div class="hero-content">
 			<div class="title-wrapper">
 				<h1>Ricardo Sánchez</h1>
-				<div class="subtitle">Enterprise Solutions Architect & Open Source Creator</div>
+				<div class="subtitle">Senior Web Application Developer en PSI Mobile</div>
+				<div class="subtitle">Stripe Community Expert for Angular</div>
 			</div>
 			<p class="description">
-				Senior Software Engineer at <a href="https://www.psi-mobile.com" target="_blank" class="highlight">PSI Mobile</a>, 
-				specializing in enterprise mobility solutions and digital transformation. Creator of 
-				<a href="https://ngx-stripe.dev" target="_blank" class="highlight">ngx-stripe</a>, empowering developers 
-				with seamless payment integrations.
+				Since childhood, I have been interested in technology and how simple parts
+				come together to perform complex tasks.
+				Currently, I develop IT projects as a freelancer and lead mobile application development at PSI Mobile.
 			</p>
 			<div class="cta-buttons">
 				<a href="/projects" class="button primary">View Projects</a>
-				<a href="https://github.com/richnologies" target="_blank" class="button github">
-					<svg height="24" width="24" viewBox="0 0 16 16" fill="currentColor">
-						<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-					</svg>
-					GitHub
-				</a>
+				<a href="https://github.com/richnologies" target="_blank" class="button github">GitHub</a>
+				<a href="https://www.linkedin.com/in/ricsanchez87" target="_blank" class="button linkedin">LinkedIn</a>
 			</div>
 		</div>
 		<div class="hero-background">
@@ -124,6 +120,15 @@ import Layout from '../layouts/Layout.astro';
 	}
 	.button.github:hover {
 		background: #333;
+		transform: translateY(-2px);
+	}
+	.button.linkedin {
+		background: var(--linkedin-blue);
+		color: var(--text-primary);
+		border-color: var(--linkedin-blue-dark);
+	}
+	.button.linkedin:hover {
+		background: var(--linkedin-blue-dark);
 		transform: translateY(-2px);
 	}
 	.hero-background {

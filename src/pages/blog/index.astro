@@ -1,29 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
-const posts = [
-	{
-		title: 'Building Enterprise-Grade Angular Applications',
-		slug: 'building-enterprise-angular-apps',
-		date: '2024-01-15',
-		excerpt: 'Best practices and patterns for building scalable Angular applications in enterprise environments.',
-		tags: ['Angular', 'Enterprise', 'Architecture']
-	},
-	{
-		title: 'The Journey of Creating ngx-stripe',
-		slug: 'creating-ngx-stripe',
-		date: '2024-01-10',
-		excerpt: 'How and why I created ngx-stripe, challenges faced, and lessons learned along the way.',
-		tags: ['Open Source', 'Angular', 'Stripe']
-	},
-	{
-		title: 'Mobile Workforce Solutions: A Technical Deep Dive',
-		slug: 'mobile-workforce-solutions',
-		date: '2024-01-05',
-		excerpt: 'Technical insights into building robust mobile workforce management solutions.',
-		tags: ['Mobile', 'Enterprise', 'Architecture']
-	}
-];
+const posts = await getCollection('blog');
 ---
 
 <Layout title="Blog - Ricardo">
@@ -34,16 +13,16 @@ const posts = [
 				<article class="post-card">
 					<div class="post-content">
 						<div class="post-header">
-							<time datetime={post.date}>{new Date(post.date).toLocaleDateString('en-US', {
+							<time datetime={post.data.date.toISOString()}>{new Date(post.data.date).toLocaleDateString('en-US', {
 								year: 'numeric',
 								month: 'long',
 								day: 'numeric'
 							})}</time>
-							<h2><a href={`/blog/${post.slug}`}>{post.title}</a></h2>
+							<h2><a href={`/blog/${post.slug}`}>{post.data.title}</a></h2>
 						</div>
-						<p>{post.excerpt}</p>
+						<p>{post.data.excerpt}</p>
 						<div class="tags">
-							{post.tags.map(tag => <span class="tag">{tag}</span>)}
+							{post.data.tags.map(tag => <span class="tag">{tag}</span>)}
 						</div>
 						<a href={`/blog/${post.slug}`} class="read-more">
 							Read More

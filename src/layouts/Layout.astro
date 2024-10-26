@@ -26,7 +26,6 @@ const { title } = Astro.props;
 				<a href="/" class="logo">R</a>
 				<div class="nav-links">
 					<a href="/">Home</a>
-					<a href="/about">About</a>
 					<a href="/projects">Projects</a>
 					<a href="/blog">Blog</a>
 					<a href="https://github.com/richnologies" target="_blank" class="github-link">
@@ -41,7 +40,7 @@ const { title } = Astro.props;
 			<slot />
 		</main>
 		<footer>
-			<p>&copy; {new Date().getFullYear()} Ricardo. All rights reserved.</p>
+			<p>&copy; {new Date().getFullYear()} Ricardo. Some rights reserved.</p>
 		</footer>
 	</body>
 </html>
@@ -54,6 +53,8 @@ const { title } = Astro.props;
 		--accent-light: #60a5fa;
 		--accent-dark: #2563eb;
 		--card-bg: #1d1f25;
+		--linkedin-blue: #0077b5;
+		--linkedin-blue-dark: #005582;
 	}
 	* {
 		margin: 0;
